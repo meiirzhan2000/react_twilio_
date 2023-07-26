@@ -1,4 +1,5 @@
 {
+  "homepage": "http://meiirzhan2000.github.io/react_twilio_",
   "name": "twilio-webchat-widget",
   "version": "1.0.0",
   "description": "",
@@ -54,6 +55,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "express": "4.17.2",
     "fetch-mock-jest": "^1.5.1",
+    "gh-pages": "^5.0.0",
     "jsonwebtoken": "^8.5.1",
     "node-fetch": "^2.6.6",
     "nodemon": "^2.0.15",
@@ -64,6 +66,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
+    "predeploy": "npm run build",
     "server": "nodemon server",
     "server:ci": "node server",
     "build": "react-app-rewired build",
@@ -71,7 +74,7 @@
     "test:nowatch": "yarn test --watchAll=false --verbose --runInBand",
     "bootstrap": "node scripts/bootstrap",
     "e2eCleanupExistingTasks": "node scripts/e2eCleanupExistingTasks",
-    "deploy": "yarn build && node scripts/deploy",
+    "deploy": "gh-pages -d build && yarn build && node scripts/deploy",
     "eject": "react-app-rewired eject"
   },
   "browserslist": [
